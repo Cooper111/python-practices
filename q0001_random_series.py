@@ -22,5 +22,11 @@ def random_series_list(count=3):
 
 if __name__ == "__main__":
     import sys
-    series_list = random_series_list(int(sys.argv[1]))
+    series_list = []
+
+    if len(sys.argv) > 1:
+        series_list = random_series_list(int(sys.argv[1]))
+    else:
+        series_list = random_series_list()
+
     print(series_list)

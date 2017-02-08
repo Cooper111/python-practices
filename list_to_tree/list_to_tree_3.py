@@ -1,3 +1,5 @@
+#!/usr/bin/env/python
+
 #
 # 1. Construct a node for the middle element in the array and return it.
 # 2. Repeat from 1. on the left half of the array, assigning the return value to the left child of the root.

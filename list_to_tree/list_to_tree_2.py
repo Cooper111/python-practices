@@ -5,6 +5,33 @@
 
 import sys
 
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+class Tree:
+    def __init__(self):
+        self.root = None
+
+    def put(self, x, value):
+
+        if x == None:
+            return Node(value)
+
+        if value < x.value:
+            x.left = self.put(x.left, value)
+        elif value > x.value:
+            x.right = self.put(x.right, value)
+        else:
+            x.value = value
+
+    def putItem(self, value):
+        self.root = self.put(self.root, value)
+
+
+
 def list_to_treelist(list):
     newList = []
     startCursor = 0
@@ -27,5 +54,10 @@ def main():
         myList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
         treeList = list_to_treelist(myList)
         print(treeList)
+        tree = Tree()
+        for i in range(0, len(treeList) - 1):
+            value = treeList[i]
+            print(value)
+            tree.putItem(value)
 
 main()

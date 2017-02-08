@@ -8,7 +8,7 @@ class Node:
     def __init__(self, value):
         self.value = value
 
-def sortedListToBST(myList, start, end):
+def buildBST(myList, start, end):
     if start > end:
         return None
     mid = int(start + (end - start) / 2)
@@ -17,7 +17,7 @@ def sortedListToBST(myList, start, end):
     node.right = sortedListToBST(myList, mid + 1, end)
     return node
 
-def buildBST(myList):
+def sortedListToBST(myList):
     return sortedListToBST(myList, 0, len(myList) - 1)
 
 # display a binary search tree
@@ -29,7 +29,7 @@ def display(parentValue, str, node):
 
 def main():
     myList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-    bst = buildBST(myList)
+    bst = sortedListToBST(myList)
     display('root', '', bst)
 
 if __name__ == "__main__":

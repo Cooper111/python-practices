@@ -1,6 +1,7 @@
 #
-# list_to_tree_1.py 和 list_to_tree_2.py 的思路不对，
-# 应该是每次取了中间值之后，再用相同的思路取中间值。
+# 1. Construct a node for the middle element in the array and return it.
+# 2. Repeat from 1. on the left half of the array, assigning the return value to the left child of the root.
+# 3. Repeat from 1. on the right half of the array, assigning the return value to the right child of the root.
 #
 
 class Node:

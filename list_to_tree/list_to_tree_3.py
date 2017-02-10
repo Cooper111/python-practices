@@ -15,12 +15,12 @@ def buildBST(myList, start, end):
         return None
     mid = int(start + (end - start) / 2)
     node = Node(myList[mid])
-    node.left = sortedListToBST(myList, start, mid - 1)
-    node.right = sortedListToBST(myList, mid + 1, end)
+    node.left = buildBST(myList, start, mid - 1)
+    node.right = buildBST(myList, mid + 1, end)
     return node
 
 def sortedListToBST(myList):
-    return sortedListToBST(myList, 0, len(myList) - 1)
+    return buildBST(myList, 0, len(myList) - 1)
 
 # display a binary search tree
 def display(parentValue, str, node):

@@ -14,10 +14,11 @@ def exchange(mylist, a, b):
     mylist[b] = temp
 
 def selectionSort(mylist):
-    for i in range(0, len(mylist) - 1):
+    n = len(mylist)
+    for i in range(0, n):
         cur = i
         minindex = cur
-        for j in range(cur, len(mylist) - 1):
+        for j in range(cur, n):
             if mylist[j] < mylist[minindex]:
                 minindex = j
         exchange(mylist, cur, minindex)
